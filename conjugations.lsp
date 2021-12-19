@@ -59,8 +59,10 @@
             (format t "~&Correct!~&")
             (format t "~&Incorrect: ~a is the right answer.~&" (nth form-number verb)))))
 
-(loop
-    repeat 10
-    do (ask-question))
+(defun main ()
+    (loop
+        repeat 10
+        do (ask-question))
+    (close conjs-file-stream))
 
-(close conjs-file-stream)
+
