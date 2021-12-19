@@ -4,3 +4,4 @@ When run it will select a random verb and form from the 5 non-終止形 forms, p
 
 To run, execute `(load "./conjugations.lsp")` in your Lisp environment.
 To compile, load the `compile.lsp` script while in SBCL. Releases compiled with Steel Bank Common Lisp 2.1.11.
+If you are on Linux, I highly recommend using this program with rlwrap to make input behave vastly better.
