@@ -62,7 +62,6 @@
 (defun main ()
     (loop
         repeat 10
-        do (ask-question))
-    (close conjs-file-stream))
+        do (ask-question)))
 
 
