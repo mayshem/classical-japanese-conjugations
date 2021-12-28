@@ -1,7 +1,9 @@
 (defparameter conjs-file-path "./conjugations.csv")
+;; set the file storing conjugations
 
 (defvar conjs-file-stream)
 (setf conjs-file-stream (open conjs-file-path :direction :input))
+;; open the file
 
 (defun split-csv-line (string)
     "Splits a line of a CSV file into a list."
@@ -44,6 +46,7 @@
 
 (defun ask-question ()
     "Asks a question, tests if answer is right."
+    (setf *random-state* (make-random-state t)) ; set the random state on call. this is to prevent the system from using the random state from the compile-time.
     (let ((form-number (pick-random-form-index))
           (verb (nth (random (length verbs)) verbs)))
         (format t "~&Verb: ~a (~a); Conjugation: ~a; Form: ~a~&" (get-終止形 verb) (get-英語 verb) (get-活用 verb) (nth form-number keys))
